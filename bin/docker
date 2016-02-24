@@ -1,0 +1,6 @@
+#!/usr/bin/env node
+
+const util = require("util");
+
+console.log("Fake docker!");
+console.log(`Command line args: [${util.inspect(process.argv)}]`);

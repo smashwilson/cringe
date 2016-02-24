@@ -1,0 +1,28 @@
+{
+  "name": "scaffold",
+  "version": "1.0.0",
+  "description": "Deploy Docker applications with terrible bash scripts",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smashwilson/scaffold.git"
+  },
+  "keywords": [
+    "docker",
+    "deployment",
+    "cicd"
+  ],
+  "author": "Ash Wilson <smashwilson@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/smashwilson/scaffold/issues"
+  },
+  "homepage": "https://github.com/smashwilson/scaffold#readme",
+  "dependencies": {},
+  "bin": {
+    "scaffold": "index.js"
+  }
+}
