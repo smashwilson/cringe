@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
+const spawn = require("child_process").spawn;
 const util = require("util");
 
-console.log("Fake docker!");
-console.log(`Command line args: [${util.inspect(process.argv)}]`);
+console.log("Injected fake docker!");
+console.log(`Command line args: ${util.inspect(process.argv)}`);

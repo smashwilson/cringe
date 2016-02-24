@@ -2,30 +2,26 @@
 "use strict";
 
 const path = require("path");
-const spawn = require("child_process").spawn;
+const fs = require("fs");
 
 const shellName = process.env.SHELL || "/bin/bash";
 const scriptName = process.argv[2] || "scaffold.sh";
-const binDir = path.join(__dirname, 'bin');
 
-const shellEnv = Object.create(process.env);
-shellEnv.PATH = `${binDir}:${shellEnv.PATH}`;
+const name = require("./name");
+const deploy = require("./deploy");
 
-const shell = spawn(shellName, [scriptName], {
-  env: shellEnv
-});
+let deploymentName = null;
 
-shell.stdout.on("data", (chunk) => {
-  process.stdout.write(chunk);
-});
+name().then((n) => {
+  deploymentName = n;
+  console.log(`Deploying scaffolding ${scriptName} @ ${deploymentName}`);
 
-shell.stderr.on("data", (chunk) => {
-  process.stderr.write(chunk);
-});
+  return deploy(shellName, scriptName, deploymentName);
+}).then(() => {
+  console.log(`Scaffolding ${scriptName} @ ${deploymentName}: success.`);
+}).catch((err) => {
+  console.error(`Scaffolding ${scriptName} @ ${deploymentName}: error.`);
+  console.error(err);
 
-shell.on("close", (code) => {
-  if (code !== 0) {
-    console.error(`Shell exited with status ${code}.`);
-    process.exit(code);
-  }
+  process.exit(1);
 });
