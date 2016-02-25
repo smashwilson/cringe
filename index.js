@@ -11,19 +11,19 @@ const deploy = require("./deploy");
 const cleanup = require("./cleanup");
 
 const shellName = process.env.SHELL || "/bin/bash";
-const scriptName = process.argv[2] || "scaffold.sh";
+const scriptName = process.argv[2] || "cringe.sh";
 let deploymentName = null;
 
 name().then((n) => {
   deploymentName = n;
-  logger.info(`Deploying scaffolding ${scriptName} @ ${deploymentName}`);
+  logger.info(`Deploying ${scriptName} @ ${deploymentName}`);
 
   return deploy(shellName, scriptName, deploymentName);
 }).then(() => {
   return cleanup(deploymentName);
 }).then(() => {
-  logger.info(`Scaffolding ${scriptName} @ ${deploymentName}: success.`);
+  logger.info(`${scriptName} @ ${deploymentName}: success.`);
 }).catch((err) => {
-  logger.error(`Scaffolding ${scriptName} @ ${deploymentName}: error.`, err);
+  logger.error(`${scriptName} @ ${deploymentName}: error.`, err);
   process.exit(1);
 });

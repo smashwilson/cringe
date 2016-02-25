@@ -1,6 +1,6 @@
 {
-  "name": "scaffold",
-  "version": "1.0.0",
+  "name": "cringe",
+  "version": "0.0.1",
   "description": "Deploy Docker applications with terrible bash scripts",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/smashwilson/scaffold.git"
+    "url": "git+https://github.com/smashwilson/cringe.git"
   },
   "keywords": [
     "docker",
@@ -18,13 +18,13 @@
   "author": "Ash Wilson <smashwilson@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/smashwilson/scaffold/issues"
+    "url": "https://github.com/smashwilson/cringe/issues"
   },
-  "homepage": "https://github.com/smashwilson/scaffold#readme",
+  "homepage": "https://github.com/smashwilson/cringe#readme",
   "dependencies": {
     "winston": "^2.1.1"
   },
   "bin": {
-    "scaffold": "index.js"
+    "cringe": "index.js"
   }
 }

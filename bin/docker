@@ -3,8 +3,8 @@
 const translate = require("../lib/translate");
 const logger = require("../lib/common").logger;
 
-const deploymentName = process.env.SCAFFOLD_DEPLOYMENT_NAME;
-const originalPath = process.env.SCAFFOLD_ORIGINAL_PATH;
+const deploymentName = process.env.CRINGE_DEPLOYMENT_NAME;
+const originalPath = process.env.CRINGE_ORIGINAL_PATH;
 const opts = {deploymentName: deploymentName};
 
 translate(opts, process.argv).execute().catch((err) => {
