@@ -21,7 +21,9 @@
     "url": "https://github.com/smashwilson/scaffold/issues"
   },
   "homepage": "https://github.com/smashwilson/scaffold#readme",
-  "dependencies": {},
+  "dependencies": {
+    "winston": "^2.1.1"
+  },
   "bin": {
     "scaffold": "index.js"
   }

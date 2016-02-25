@@ -9,19 +9,18 @@ const scriptName = process.argv[2] || "scaffold.sh";
 
 const name = require("./name");
 const deploy = require("./deploy");
+const logger = require("./lib/common").logger;
 
 let deploymentName = null;
 
 name().then((n) => {
   deploymentName = n;
-  console.log(`Deploying scaffolding ${scriptName} @ ${deploymentName}`);
+  logger.info(`Deploying scaffolding ${scriptName} @ ${deploymentName}`);
 
   return deploy(shellName, scriptName, deploymentName);
 }).then(() => {
-  console.log(`Scaffolding ${scriptName} @ ${deploymentName}: success.`);
+  logger.info(`Scaffolding ${scriptName} @ ${deploymentName}: success.`);
 }).catch((err) => {
-  console.error(`Scaffolding ${scriptName} @ ${deploymentName}: error.`);
-  console.error(err);
-
+  logger.error(`Scaffolding ${scriptName} @ ${deploymentName}: error.`, err);
   process.exit(1);
 });
