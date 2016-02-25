@@ -5,6 +5,8 @@ module.exports = function (shellName, scriptName, deploymentName) {
   return new Promise((resolve, reject) => {
     const binDir = path.join(__dirname, 'bin');
     const shellEnv = Object.create(process.env);
+    shellEnv.SCAFFOLD_ORIGINAL_PATH = process.env.PATH;
+    shellEnv.SCAFFOLD_DEPLOYMENT_NAME = deploymentName;
     shellEnv.PATH = `${binDir}:${shellEnv.PATH}`;
 
     const shell = spawn(shellName, [scriptName], {

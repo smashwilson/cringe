@@ -1,7 +1,14 @@
 #!/usr/bin/env node
 
-const spawn = require("child_process").spawn;
 const util = require("util");
 
-console.log("Injected fake docker!");
-console.log(`Command line args: ${util.inspect(process.argv)}`);
+const translate = require("../lib/translate");
+
+const deploymentName = process.env.SCAFFOLD_DEPLOYMENT_NAME;
+const originalPath = process.env.SCAFFOLD_ORIGINAL_PATH;
+const opts = {deploymentName: deploymentName};
+
+translate(opts, process.argv).execute().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});
