@@ -6,10 +6,12 @@ Scaffold is an orchestration system for applications that consist of collections
 
 ## Installation
 
-Install scaffold from [npm](https://docs.npmjs.com/getting-started/installing-node):
+Install scaffold with [npm](https://docs.npmjs.com/getting-started/installing-node):
 
 ```bash
-npm install -g scaffold
+git clone https://github.com/smashwilson/scaffold.git
+cd scaffold
+npm install -g .
 ```
 
 ## Usage
