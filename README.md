@@ -9,9 +9,7 @@ Cringe is an orchestration system for applications that consist of collections o
 Install cringe with [npm](https://docs.npmjs.com/getting-started/installing-node):
 
 ```bash
-git clone https://github.com/smashwilson/cringe.git
-cd cringe
-npm install -g .
+npm install -g cringe
 ```
 
 ## Usage
