@@ -1,6 +1,6 @@
 {
   "name": "cringe",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Deploy Docker applications with terrible bash scripts",
   "main": "index.js",
   "scripts": {
